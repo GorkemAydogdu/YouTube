@@ -74,13 +74,6 @@ body {
   margin: 0 2rem;
 }
 
-@media only screen and (max-width: 26.5625em) {
-  .btn--user {
-    font-size: 1.8rem;
-    margin: 0 0.8rem;
-  }
-}
-
 .form {
   display: flex;
 }
@@ -245,7 +238,7 @@ body {
   white-space: nowrap;
 }
 
-@media only screen and (max-width: 81.25em) {
+@media only screen and (max-width: 75em) {
   .video__channel-name {
     width: 12rem;
   }
