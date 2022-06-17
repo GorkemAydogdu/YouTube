@@ -1,0 +1,79 @@
+.video {
+  background-color: $color-white-light;
+  padding: 0 1.6rem;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__group {
+    margin: 1.6rem 1.2rem 3rem;
+    cursor: pointer;
+  }
+
+  &__details {
+    display: flex;
+    margin-top: 1rem;
+  }
+
+  &__thumbnail {
+    position: relative;
+  }
+
+  &__time {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    color: $color-white;
+    padding: 3px 4px;
+    margin: 4px;
+    border-image: 2px;
+    font-size: 1.2rem;
+  }
+
+  &__logo img {
+    width: 3.6rem;
+    border-radius: 50%;
+    margin-right: 1.2rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+  }
+
+  &__name {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__channel-name,
+  &__statistics {
+    color: $color-grey-dark-2;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.8rem;
+  }
+
+  &__channel-name {
+    width: 15.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    @include respond(tab-land) {
+      width: 12rem;
+    }
+  }
+
+  &__views::after {
+    content: '•';
+    margin-left: 3px;
+  }
+}

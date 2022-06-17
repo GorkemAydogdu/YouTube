@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sass/main.css" />
+    <link rel="shortcut icon" href="img/youtube-icon.png" />
+
+    <!--Font Awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>YouTube</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="header__logo-box">
+        <button class="btn">
+          <i class="fa-solid fa-bars header__menu"></i>
+        </button>
+        <img
+          src="img/YouTube-Logo.png"
+          alt="YouTube Logo"
+          class="header__logo"
+        />
+      </div>
+
+      <div class="header__search-box">
+        <form action="#" class="form">
+          <div class="form__group form__group--1">
+            <input type="text" class="form__input" placeholder="Search" />
+            <i
+              class="fa-solid fa-magnifying-glass form__search form__input-search"
+            ></i>
+
+            <button class="btn btn--search">
+              <i class="fa-solid fa-magnifying-glass form__search"></i>
+            </button>
+            <button class="btn btn--voice">
+              <i class="fa-solid fa-microphone form__voice"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="header__user-box">
+        <button class="btn btn--user">
+          <i class="fa-solid fa-video"></i>
+        </button>
+        <button class="btn btn--user">
+          <i class="fa-solid fa-table-cells"></i>
+        </button>
+        <button class="btn btn--user">
+          <i class="fa-solid fa-bell"></i>
+        </button>
+        <button class="btn btn--user">
+          <img src="img/user.jpg" alt="User" class="header__user" />
+        </button>
+      </div>
+    </header>
+
+    <div class="content">
+      <nav class="sidebar">
+        <ul class="sidebar__nav">
+          <li class="sidebar__item sidebar__item--active">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-home"></use>
+              </svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-explore"></use>
+              </svg>
+              <span>Explore</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-film"></use>
+              </svg>
+              <span>Shorts</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-subscriptions"></use>
+              </svg>
+              <span>Subscriptions</span>
+            </a>
+          </li>
+          <hr />
+          <li class="sidebar__item sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-video_library"></use>
+              </svg>
+              <span>Library</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-history"></use>
+              </svg>
+              <span>History</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-play2"></use>
+              </svg>
+              <span>Your videos</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-clock"></use>
+              </svg>
+              <span>Watch later</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-like"></use>
+              </svg>
+              <span>Liked videos</span>
+            </a>
+          </li>
+          <hr />
+          <h3 class="sidebar__heading-primary">Subscriptions</h3>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <img
+                class="sidebar__avatar"
+                src="https://yt3.ggpht.com/JoIhqAeS6Twpe41Wgywg72XGn6QFK1WlnUycyewFWq9UE-g9GkxLDQgTKcLdS3rDrqUBeE-0=s88-c-k-c0x00ffffff-no-rj"
+                alt="Logo"
+              />
+              <span class="sidebar__channel-name"
+                >Mercedes-AMG Petronas Formula One Team</span
+              >
+            </a>
+          </li>
+          <hr />
+          <h3 class="sidebar__heading-primary">More From Youtube</h3>
+          <li class="sidebar__item sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-youtube"></use>
+              </svg>
+              <span>YouTube Premium</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-game-controller"></use>
+              </svg>
+              <span>Gaming</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-feed"></use>
+              </svg>
+              <span>Live</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-trophy"></use>
+              </svg>
+              <span>Sports</span>
+            </a>
+          </li>
+          <hr />
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-cog"></use>
+              </svg>
+              <span>Settings</span>
+            </a>
+          </li>
+          <li class="sidebar__item sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-flag"></use>
+              </svg>
+              <span>Report history</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-help-with-circle"></use>
+              </svg>
+              <span>Help</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <svg class="sidebar__icon">
+                <use href="img/sprite.svg#icon-sms_failed"></use>
+              </svg>
+              <span>Send feedback</span>
+            </a>
+          </li>
+          <hr />
+          <div class="sidebar__footer sidebar__footer--1">
+            <ul class="sidebar__footer-list">
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">About</a>
+              </li>
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">Press</a>
+              </li>
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">Copyright</a>
+              </li>
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">Contact us</a>
+              </li>
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">Creators</a>
+              </li>
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">Advertise</a>
+              </li>
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">Developers</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar__footer sidebar__footer--2">
+            <ul class="sidebar__footer-list">
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">Terms</a>
+              </li>
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">Privacy</a>
+              </li>
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">Policy & Safety</a>
+              </li>
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">How YouTube works</a>
+              </li>
+              <li class="sidebar__footer-item">
+                <a href="#" class="sidebar__footer-link">Test new features</a>
+              </li>
+              <span class="sidebar__footer-copyright"
+                >&copy; 2022 Google LLC</span
+              >
+            </ul>
+          </div>
+        </ul>
+      </nav>
+
+      <main class="main">
+        <div class="overview">
+          <ul class="overview__list">
+            <li class="overview__item">
+              <button class="overview__btn overview__btn--active">All</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Music</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Gaming</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Bodybuilding</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Html</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">CSS</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Javascript</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">React</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">ASP.NET</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">NBA</button>
+            </li>
+          </ul>
+        </div>
+        <div class="video"></div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

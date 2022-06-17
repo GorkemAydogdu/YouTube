@@ -1,0 +1,31 @@
+.btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  &--search {
+    border: 1px solid $color-grey-light-1;
+    border-left: none;
+    width: 5rem;
+    height: 4rem;
+    background-color: $color-white-dark;
+    margin-right: 2rem;
+  }
+
+  &--voice {
+    width: 5rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: $color-white-light;
+  }
+
+  &--user {
+    font-size: 2rem;
+    margin: 0 2rem;
+
+    @include respond(phone) {
+      font-size: 1.8rem;
+      margin: 0 0.8rem;
+    }
+  }
+}

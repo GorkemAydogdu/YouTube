@@ -1,0 +1,112 @@
+.sidebar {
+  height: calc(100vh - 6rem);
+  background-color: $color-white;
+  padding-right: 1.6rem;
+
+  flex: 0 0 14%;
+  overflow: hidden;
+
+  position: fixed;
+  top: 6rem;
+  left: 0;
+
+  &:hover {
+    overflow-y: scroll;
+    padding-right: 0;
+  }
+
+  &__heading-primary {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    padding: 0.8rem 2.4rem;
+    text-transform: uppercase;
+    color: $color-grey-dark-2;
+  }
+
+  &__nav {
+    font-size: 1.4rem;
+    list-style-type: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2.4rem;
+
+    &--active {
+      background-color: rgba($color-black, 0.1);
+      font-weight: 500;
+
+      &:hover {
+        background-color: rgba($color-black, 0.2) !important;
+      }
+    }
+    &:hover {
+      background-color: rgba($color-black, 0.05);
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: $color-black;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 3rem;
+  }
+
+  &__avatar {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    margin-right: 2.6rem;
+  }
+
+  &__footer {
+    font-size: 1.3rem;
+    width: 24rem;
+
+    &--1 {
+      padding: 0 2.4rem;
+    }
+
+    &--2 {
+      padding: 1.2rem 2.4rem;
+    }
+  }
+
+  &__footer-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__footer-item {
+    margin-right: 0.8rem;
+  }
+
+  &__footer-link {
+    color: $color-grey-dark-2;
+    font-weight: 500;
+    line-height: 1.4px;
+    text-decoration: none;
+  }
+
+  &__footer-copyright {
+    font-size: 1.2rem;
+    color: $color-grey-dark-1;
+    margin-top: 1.4rem;
+  }
+
+  &__channel-name {
+    width: 13rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
