@@ -256,11 +256,6 @@ body {
   margin-left: 3px;
 }
 
-.row {
-  display: flex;
-  padding: 0 1.2rem;
-}
-
 .header {
   height: 6rem;
   background-color: #fff;
