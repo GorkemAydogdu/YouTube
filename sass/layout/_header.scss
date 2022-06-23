@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 3rem;
+  padding: 0 1rem;
   z-index: 10;
 
   position: fixed;
@@ -13,6 +13,7 @@
   right: 0;
 
   &__logo-box {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,15 +29,43 @@
   }
 
   &__menu {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
     font-size: 2rem;
-    margin-right: 3rem;
+    margin: 0 1.5rem 0 0.5rem;
+    transition: all 0.1s ease-in;
+    border: 1px solid $color-white;
+
+    &:active {
+      background-color: $color-white-dark;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    @include respond(smallPhone) {
+      margin: 0 1rem 0 1.5rem;
+    }
   }
 
   &__search-box {
+    display: flex;
+    justify-content: center;
     width: 65rem;
+
+    @include respond(phone) {
+      display: none;
+    }
   }
 
   &__user-box {
     display: flex;
+  }
+
+  &__country {
+    position: absolute;
+    top: 8px;
+    right: -15px;
+    font-size: 1rem;
+    color: $color-grey-dark-2;
   }
 }

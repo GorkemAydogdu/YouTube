@@ -2,6 +2,7 @@
   background-color: $color-white;
   height: 6rem;
   display: flex;
+  align-items: center;
   border-top: 1px solid $color-white-dark;
   border-bottom: 1px solid $color-white-dark;
   position: relative;
@@ -16,6 +17,7 @@
   }
 
   &__item {
+    flex: 0 0 auto;
     margin-right: 1.2rem;
   }
 
@@ -38,5 +40,75 @@
       background-color: $color-black;
       color: $color-white;
     }
+  }
+
+  &__wrapper {
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+
+  &__background {
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(255, 255, 255, 0.98);
+
+    &--left {
+      display: none;
+    }
+
+    &--right {
+      right: 0%;
+    }
+  }
+
+  &__effect {
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+
+    &--left {
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.98) 20%,
+        rgba(255, 255, 255, 0) 80%
+      );
+      margin-left: 5rem;
+    }
+
+    &--right {
+      background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0.98) 20%,
+        rgba(255, 255, 255, 0) 80%
+      );
+      margin-left: -5rem;
+    }
+  }
+
+  &__left,
+  &__right {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: $default-font-size;
   }
 }

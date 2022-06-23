@@ -26,19 +26,20 @@
   <body>
     <header class="header">
       <div class="header__logo-box">
-        <button class="btn">
-          <i class="fa-solid fa-bars header__menu"></i>
+        <button class="btn header__menu">
+          <i class="fa-solid fa-bars"></i>
         </button>
         <img
           src="img/YouTube-Logo.png"
           alt="YouTube Logo"
           class="header__logo"
         />
+        <span class="header__country">TR</span>
       </div>
 
       <div class="header__search-box">
         <form action="#" class="form">
-          <div class="form__group form__group--1">
+          <div class="form__group">
             <input type="text" class="form__input" placeholder="Search" />
             <i
               class="fa-solid fa-magnifying-glass form__search form__input-search"
@@ -55,13 +56,16 @@
       </div>
 
       <div class="header__user-box">
-        <button class="btn btn--user">
+        <button class="btn btn--mobileSearch">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <button class="btn btn--create">
           <i class="fa-solid fa-video"></i>
         </button>
-        <button class="btn btn--user">
+        <button class="btn btn--app">
           <i class="fa-solid fa-table-cells"></i>
         </button>
-        <button class="btn btn--user">
+        <button class="btn btn--notifications">
           <i class="fa-solid fa-bell"></i>
         </button>
         <button class="btn btn--user">
@@ -281,6 +285,18 @@
 
       <main class="main">
         <div class="overview">
+          <!--position : Relative-->
+          <div class="overview__wrapper overview__wrapper--left">
+            <!--Absolute-->
+            <div class="overview__background overview__background--left">
+              <!--Fixed-->
+              <div class="overview__effect overview__effect--left"></div>
+              <!--Fixed-->
+              <button class="overview__left">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+            </div>
+          </div>
           <ul class="overview__list">
             <li class="overview__item">
               <button class="overview__btn overview__btn--active">All</button>
@@ -312,9 +328,73 @@
             <li class="overview__item">
               <button class="overview__btn">NBA</button>
             </li>
+            <li class="overview__item">
+              <button class="overview__btn">Music</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Gaming</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Bodybuilding</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Html</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">CSS</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Javascript</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">React</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">ASP.NET</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">NBA</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Music</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Gaming</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Bodybuilding</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Html</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">CSS</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">Javascript</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">React</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">ASP.NET</button>
+            </li>
+            <li class="overview__item">
+              <button class="overview__btn">NBA</button>
+            </li>
           </ul>
+          <div class="overview__wrapper overview__wrapper--right">
+            <div class="overview__background overview__background--right">
+              <div class="overview__effect overview__effect--right"></div>
+              <button class="overview__right">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="video"></div>
+        <div class="video">
+          <div class="row"></div>
+        </div>
       </main>
     </div>
 

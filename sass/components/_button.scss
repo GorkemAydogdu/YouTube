@@ -19,8 +19,45 @@
     background-color: $color-white-light;
   }
 
-  &--user {
+  &--mobileSearch {
+    display: none;
+    @include respond(smallPhone) {
+      display: block;
+    }
+  }
+
+  &--create,
+  &--app,
+  &--notifications,
+  &--user,
+  &--mobileSearch {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
     font-size: 2rem;
-    margin: 0 2rem;
+    margin: 0 0.8rem;
+
+    transition: all 0.1s ease-in;
+    border: 1px solid $color-white;
+
+    &:not(:last-child):active {
+      background-color: $color-white-dark;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    @include respond(tab-port) {
+      margin: 0 0.6rem;
+    }
+
+    @include respond(smallPhone) {
+      font-size: 1.8rem;
+      margin: 0 0.4rem;
+    }
+  }
+
+  &--notifications {
+    @include respond(smallPhone) {
+      display: none;
+    }
   }
 }

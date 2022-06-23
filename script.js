@@ -1,4 +1,16 @@
-const videoEl = document.querySelector(".video");
+const row = document.querySelector(".row");
+const overview = document.querySelector(".overview");
+const overviewLeft = document.querySelector(".overview__background--left");
+const overviewLeftButton = document.querySelector(".overview__left");
+const overviewRight = document.querySelector(".overview__background--right");
+const overviewRightButton = document.querySelector(".overview__right");
+const overviewWrapper = document.querySelectorAll(".overview__wrapper");
+overview.scrollLeft = 0;
+
+const menuBtn = document.querySelector(".header__menu");
+const sidebar = document.querySelector(".sidebar");
+const main = document.querySelector(".main");
+
 const api_key = "AIzaSyB61dCiMiNQ0njfW4uUCORhE2P96oQrMs0";
 const video_url = "https://www.googleapis.com/youtube/v3/videos?";
 const channel_url = "https://www.googleapis.com/youtube/v3/channels?";
@@ -11,6 +23,8 @@ async function getVideo() {
         maxResults: 50,
         regionCode: 'TR'
     }));
+
+
     const data = await video.json();
     data.items.forEach(item => {
 
@@ -72,19 +86,32 @@ async function getVideo() {
 
         // Video Views
         if (item.statistics.viewCount > 999 && item.statistics.viewCount < 1000000) {
-            item.statistics.Count = convertToInternationalCurrencySystem(item.statistics.viewCount).substring(0, 3) + "K";
+            item.statistics.Count = convertToInternationalCurrencySystem(item.statistics.viewCount).substring(0, 3).replace(".", "") + "K";
         }
-        else if (item.statistics.viewCount > 1000000 && item.statistics.viewCount < 10000000) {
+        else if (item.statistics.viewCount > 1000000 && item.statistics.viewCount < 1000000000) {
             item.statistics.Count = convertToInternationalCurrencySystem(item.statistics.viewCount).substring(0, 3).replace(".0", "") + "M";
         }
         else {
-            item.statistics.Count = convertToInternationalCurrencySystem(item.statistics.viewCount).substring(0, 2) + "M"
+            item.statistics.Count = convertToInternationalCurrencySystem(item.statistics.viewCount).substring(0, 3) + "B"
         }
 
         // Video Duration
         item.contentDetails.duration = converTime(item.contentDetails.duration);
         getChannel(item);
     })
+}
+
+// Video id'e göre bilgiler alnıp thumbnail video'ya ekleniyor
+async function getChannel(video) {
+    const channel = await fetch(channel_url + new URLSearchParams({
+        key: api_key,
+        part: 'snippet',
+        id: video.snippet.channelId,
+    }));
+
+    const data = await channel.json();
+    video.snippet.channelLogo = data.items[0].snippet.thumbnails.default.url;
+    createVideo(video);
 }
 
 function converTime(d) {
@@ -109,7 +136,7 @@ function converTime(d) {
     return d !== "0S" ? h + m + s : "LIVE"
 }
 
-
+// gelen sayının karşılığını döndürür
 function convertToInternationalCurrencySystem(count) {
     // Nine Zeroes for Billions
     return Math.abs(Number(count)) >= 1.0e+9
@@ -126,22 +153,8 @@ function convertToInternationalCurrencySystem(count) {
 
                 : Math.abs(Number(count));
 }
-
-async function getChannel(video) {
-    const channel = await fetch(channel_url + new URLSearchParams({
-        key: api_key,
-        part: 'snippet',
-        id: video.snippet.channelId,
-    }));
-
-    const data = await channel.json();
-    video.snippet.channelLogo = data.items[0].snippet.thumbnails.default.url;
-    createVideo(video);
-}
-
-
+// Video oluşturma
 function createVideo(data) {
-    console.log(data)
     const video = `
     <div class="video__thumbnail">
       <img
@@ -173,7 +186,77 @@ function createVideo(data) {
     videoGroup.classList.add("video__group");
     videoGroup.innerHTML += video;
 
-    videoEl.appendChild(videoGroup);
+    row.appendChild(videoGroup);
+
 }
+
+// Butonlara tıklandığında sağa sola kaydır
+overviewRightButton.addEventListener('click', () => {
+    overview.scrollLeft += 100;
+    if (overview.scrollLeft === overview.scrollWidth - overview.clientWidth) {
+        overviewRight.style.display = "none";
+    }
+    else {
+        overviewRight.style.display = "block";
+    }
+
+    overviewLeft.style.display = "block";
+})
+
+overviewLeftButton.addEventListener('click', () => {
+    overview.scrollLeft -= 100;
+    if (overview.scrollLeft === 0) {
+        overviewLeft.style.display = "none";
+    }
+    overviewRight.style.display = "block";
+})
+
+// Scroll olduğunda overview butonları none
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        overviewWrapper.forEach(item => {
+            item.style.display = "none";
+        })
+    }
+    else {
+        overviewWrapper.forEach(item => {
+            item.style.display = "flex";
+        })
+    }
+
+})
+
+window.onresize = displayWindowSize;
+window.onload = displayWindowSize;
+
+function displayWindowSize() {
+    let myWidth = window.innerWidth;
+    // your size calculation code here
+    if (myWidth < 1000) {
+        sidebar.style.transform = "translateX(-100%)";
+        main.style.left = "0";
+    } else {
+        sidebar.style.transform = "translateX(0%)";
+        main.style.left = "25.6rem"
+    }
+};
+
+menuBtn.addEventListener('click', () => {
+    let myWidth = window.innerWidth;
+
+    if (sidebar.style.transform === "translateX(-100%)") {
+        if (myWidth < 1000) {
+            main.style.left = "0";
+        } else {
+            main.style.left = "25.6rem";
+        }
+        sidebar.style.transform = "translateX(0%)";
+    }
+    else {
+        sidebar.style.transform = "translateX(-100%)";
+        main.style.left = "0";
+
+    }
+})
 
 getVideo();

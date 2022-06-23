@@ -1,5 +1,14 @@
 .form {
   display: flex;
+  width: 100%;
+
+  @include respond(tab-land) {
+    width: 80%;
+  }
+
+  @include respond(tab-port) {
+    width: 75%;
+  }
 
   &__group {
     position: relative;
@@ -7,11 +16,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    &--3 {
-      width: 4rem;
-      border-radius: 50%;
-      background-color: $color-white-light;
-    }
   }
 
   &__input {

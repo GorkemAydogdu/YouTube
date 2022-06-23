@@ -3,6 +3,9 @@
   background-color: $color-white;
   padding-right: 1.6rem;
 
+  z-index: 999;
+  transition: transform 0.3s ease-in-out;
+
   flex: 0 0 14%;
   overflow: hidden;
 
