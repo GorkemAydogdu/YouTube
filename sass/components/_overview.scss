@@ -60,26 +60,24 @@
     }
   }
 
-  &__background {
+  &__background,
+  &__effect {
     position: fixed;
     width: 5rem;
     height: 5rem;
-    background-color: rgba(255, 255, 255, 0.98);
+  }
 
+  &__background {
+    background-color: rgba(255, 255, 255, 0.98);
     &--left {
       display: none;
     }
-
     &--right {
       right: 0%;
     }
   }
 
   &__effect {
-    position: fixed;
-    width: 5rem;
-    height: 5rem;
-
     &--left {
       background: linear-gradient(
         to right,

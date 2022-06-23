@@ -3,18 +3,20 @@
   background-color: transparent;
   cursor: pointer;
 
+  &--search,
+  &--voice {
+    width: 5rem;
+    height: 4rem;
+  }
+
   &--search {
     border: 1px solid $color-grey-light-1;
     border-left: none;
-    width: 5rem;
-    height: 4rem;
     background-color: $color-white-dark;
     margin-right: 2rem;
   }
 
   &--voice {
-    width: 5rem;
-    height: 4rem;
     border-radius: 50%;
     background-color: $color-white-light;
   }

@@ -53,18 +53,19 @@ body {
   cursor: pointer;
 }
 
+.btn--search, .btn--voice {
+  width: 5rem;
+  height: 4rem;
+}
+
 .btn--search {
   border: 1px solid #d3d3d3;
   border-left: none;
-  width: 5rem;
-  height: 4rem;
   background-color: #f0f0f0;
   margin-right: 2rem;
 }
 
 .btn--voice {
-  width: 5rem;
-  height: 4rem;
   border-radius: 50%;
   background-color: #f9f9f9;
 }
@@ -163,11 +164,7 @@ body {
   left: 1rem;
 }
 
-.form__search {
-  font-size: 1.6rem;
-}
-
-.form__voice {
+.form__search, .form__voice {
   font-size: 1.6rem;
 }
 
@@ -233,10 +230,13 @@ body {
   right: 0;
 }
 
-.overview__background {
+.overview__background, .overview__effect {
   position: fixed;
   width: 5rem;
   height: 5rem;
+}
+
+.overview__background {
   background-color: rgba(255, 255, 255, 0.98);
 }
 
@@ -246,12 +246,6 @@ body {
 
 .overview__background--right {
   right: 0%;
-}
-
-.overview__effect {
-  position: fixed;
-  width: 5rem;
-  height: 5rem;
 }
 
 .overview__effect--left {
@@ -518,8 +512,11 @@ body {
   padding-right: 0;
 }
 
-.sidebar__heading-primary {
+.sidebar__heading-primary, .sidebar__nav {
   font-size: 1.4rem;
+}
+
+.sidebar__heading-primary {
   font-weight: 500;
   letter-spacing: 0.7px;
   padding: 0.8rem 2.4rem;
@@ -528,7 +525,6 @@ body {
 }
 
 .sidebar__nav {
-  font-size: 1.4rem;
   list-style-type: none;
 }
 
